@@ -1,0 +1,26 @@
+function Ordenacao_2(){
+    const numeros = [];
+    for (let i=0; i<2; i++){
+        let numero = parseFloat(prompt("Informe um número: "));
+        if (!isNaN(numero)){
+            numeros.push(numero);
+        }else{
+            alert("Digite um número válido!");
+            i--;
+        }
+    }
+    function insertionSort(vetor) {
+    for (let i = 1; i < vetor.length; i++) {
+        let chave = vetor[i];
+        let j = i - 1;
+        while (j >= 0 && vetor[j] < chave) { 
+            vetor[j + 1] = vetor[j];
+            j--;
+        }
+        vetor[j + 1] = chave;
+    }
+    return vetor;
+}
+    const numerosOrdenados = insertionSort(numeros);
+    alert("A ordem decrescente é: " + numerosOrdenados);
+}
